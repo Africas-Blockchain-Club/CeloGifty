@@ -22,15 +22,10 @@ export default function Home() {
 
     return (
         <div className="flex flex-col justify-center items-center">
-            <div className="h1">
-                There you go... a canvas for your next Celo project!
-            </div>
             {isConnected ? (
-                <div className="h2 text-center">
-                    Your address: {userAddress}
-                </div>
+                <HomeApp />
             ) : (
-                <div>No Wallet Connected</div>
+                <div className="bg-gray-500 font-mono">No Wallet Connected</div>
             )}
         </div>
     );
