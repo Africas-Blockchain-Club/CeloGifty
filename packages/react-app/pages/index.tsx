@@ -13,7 +13,7 @@ export default function Home() {
     const [userAddress, setUserAddress] = useState("");
     const [isMounted, setIsMounted] = useState(false);
     const { address, isConnected } = useAccount();
-    const { data, isError, isSuccess, isLoading } = useReadContract({
+    const { data, isError, error, isSuccess, isLoading } = useReadContract({
         abi: contractABI.abi,
         address: "0x323D5128A3BC9Ce0472cDC750De03438d508347F",
         account: account.address,
@@ -53,6 +53,7 @@ export default function Home() {
     } else if (isLoading) {
         return (<span className="loading loading-dots loading-md"></span>);
     } else if (isError) {
+        console.log(error)
         return <p className="text-red-600 font-semibold text-xl">Internal Server Error. Please try again.</p>
     } else {
         return (<span className="loading loading-dots loading-md"></span>);
