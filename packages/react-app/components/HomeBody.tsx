@@ -26,17 +26,6 @@ const HomeBody = () => {
 		)
 	}
 
-	// const renderList = () => {
-	// 	const listItems: Array<any> = [];
-	// 	const list = data as Array<any>;
-
-	// 	for (let idx = 0; idx < list.length; idx++) {
-	// 		let merchant: any = list[idx]
-	// 		listItems.push(<MerchantCard name={merchant.name} minimumPrice={0.1} logo={""} />)
-	// 	}
-
-	// 	return listItems;
-	// }
 
 
 	return (

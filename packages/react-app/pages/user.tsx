@@ -6,12 +6,13 @@ import NavBar from "@/components/NavBar";
 import BottomNavBar from "@/components/BottomNavBar";
 import SearchBar from "@/components/SearchBar";
 import MerchantCard from "@/components/MerchantCard";
+import MyCardsTab from "@/components/MyCardsTab";
 
 const UserHome = () => {
 	const account = useAccount();
 	const { data, isError, error, isLoading, isSuccess } = useReadContract({
 		abi: contractAbi.abi,
-		address: "0x536c3Fe8613d2648F2B3ac6c9B45Ea6C1EfB6611",
+		address: "0x323D5128A3BC9Ce0472cDC750De03438d508347F",
 		account: account.address,
 		functionName: "getMerchants"
 	});
@@ -23,11 +24,17 @@ const UserHome = () => {
 
 		if (isSuccess) {
 			console.log(data);
-			return (
-				<>
-					{renderList()}
-				</>
-			)
+			if (selectedScreen == 0) {
+				return (
+					<>
+						{renderList()}
+					</>
+				)
+			} else if (selectedScreen == 1) {
+				return <MyCardsTab />
+			} else {
+				return (<>Settings Tab</>)
+			}
 			{/* {renderList()} */ }
 		} else if (isError) {
 			console.error(error)
@@ -63,7 +70,7 @@ const UserHome = () => {
 			<div className="flex flex-col mx-auto justify-center items-center pt-8">
 				{render()}
 			</div>
-			<BottomNavBar onChange={setSelectedScreen} />
+			<BottomNavBar selectedIndex={selectedScreen} onChange={setSelectedScreen} />
 		</div >
 	);
 }

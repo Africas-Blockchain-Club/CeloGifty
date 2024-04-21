@@ -21,7 +21,7 @@ const OnBoarding = () => {
 		} else {
 			writeContract({
 				abi: contractABI.abi,
-				address: "0x536c3Fe8613d2648F2B3ac6c9B45Ea6C1EfB6611",
+				address: "0x323D5128A3BC9Ce0472cDC750De03438d508347F",
 				account: account.address,
 				functionName: "createUser",
 				args: [false],
