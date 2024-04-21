@@ -13,6 +13,7 @@
         "@types/chai": "^4.2.0",
         "@types/mocha": ">=9.1.0",
         "chai": "^4.2.0",
+        "daisyui": "^4.10.2",
         "hardhat": "^2.19.1",
         "hardhat-gas-reporter": "^1.0.8",
         "solidity-coverage": "^0.8.1",
