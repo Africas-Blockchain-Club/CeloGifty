@@ -10,6 +10,7 @@ contract GiftCard {
     }
 
     struct Card {
+        string cardID;
         // value || balance available in gift card
         uint value;
         // issue date of gift card [when was the card issued]
@@ -26,6 +27,7 @@ contract GiftCard {
         bool transferable;
         // where can the gift card be used | TODO: nil address should mean card is universal
         address merchant;
+        string merchantName;
     }
 
     struct Merchant {
@@ -39,6 +41,7 @@ contract GiftCard {
     mapping(address => User) users;
 
     address[] public merchantAddresses;
+    string[] public cardIDs;
 
     modifier isMerchantExists(address merchantAddress) {
         require(merchants[merchantAddress].merchantID != merchantAddress);
@@ -90,6 +93,7 @@ contract GiftCard {
     ) public payable {
         // create new gift card & map gift card to _cardID
         cards[_cardID] = Card({
+            cardID: _cardID,
             // issue date is now
             issueDate: block.timestamp,
             validUntil: validThru,
@@ -98,12 +102,14 @@ contract GiftCard {
             value: 0,
             beneficiary: msg.sender,
             merchant: merchant,
-            generatedBy: msg.sender
+            generatedBy: msg.sender,
+            merchantName: merchants[merchant].name
         });
 
         require(cards[_cardID].beneficiary == msg.sender);
         cards[_cardID].value = msg.value;
         balance += msg.value;
+        cardIDs.push(_cardID);
     }
 
     function viewCard(
@@ -192,5 +198,14 @@ contract GiftCard {
         cards[_cardID].beneficiary = beneficiary;
     }
 
-    // function viewCards() {}
+    function viewCards() public view returns (Card[] memory) {
+        Card[] memory _allCards = new Card[](cardIDs.length);
+
+        for (uint y = 0; y < cardIDs.length; y++) {
+            if (cards[cardIDs[y]].beneficiary == msg.sender) {
+                _allCards[y] = cards[cardIDs[y]];
+            }
+        }
+        return _allCards;
+    }
 }
