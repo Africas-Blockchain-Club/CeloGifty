@@ -2,31 +2,31 @@
 pragma solidity ^0.8.17;
 
 contract GiftCard {
-    // uint256 balance;
+    uint256 balance;
 
     struct User {
         address uid;
         bool isMerchant;
     }
 
-    // struct Card {
-    //     // value || balance available in gift card
-    //     uint value;
-    //     // issue date of gift card [when was the card issued]
-    //     uint256 issueDate;
-    //     // till when is the card valid before expiration
-    //     uint validUntil;
-    //     // gift card benefiary [only beneficiary can make transactions with the card]
-    //     address beneficiary;
-    //     // can the gift card be topped up
-    //     bool rechargable;
-    //     // address the card was issued to
-    //     address generatedBy;
-    //     // can the beneficiary of the gift card be transfered
-    //     bool transferable;
-    //     // where can the gift card be used | TODO: nil address should mean card is universal
-    //     address merchant;
-    // }
+    struct Card {
+        // value || balance available in gift card
+        uint value;
+        // issue date of gift card [when was the card issued]
+        uint256 issueDate;
+        // till when is the card valid before expiration
+        uint validUntil;
+        // gift card benefiary [only beneficiary can make transactions with the card]
+        address beneficiary;
+        // can the gift card be topped up
+        bool rechargable;
+        // address the card was issued to
+        address generatedBy;
+        // can the beneficiary of the gift card be transfered
+        bool transferable;
+        // where can the gift card be used | TODO: nil address should mean card is universal
+        address merchant;
+    }
 
     struct Merchant {
         address merchantID;
@@ -34,7 +34,7 @@ contract GiftCard {
     }
 
     // mapping each gift card to it's ID
-    // mapping(string => Card) cards;
+    mapping(string => Card) cards;
     mapping(address => Merchant) merchants;
     mapping(address => User) users;
 
@@ -81,62 +81,66 @@ contract GiftCard {
         return allMerchants;
     }
 
-    // function createCard(
-    //     address merchant,
-    //     string memory _cardID,
-    //     uint validThru,
-    //     bool rechargable,
-    //     bool transferable
-    // ) public {
-    //     // create new gift card & map gift card to _cardID
-    //     cards[_cardID] = Card({
-    //         // issue date is now
-    //         issueDate: block.timestamp,
-    //         validUntil: validThru,
-    //         rechargable: rechargable,
-    //         transferable: transferable,
-    //         value: 0,
-    //         beneficiary: msg.sender,
-    //         merchant: merchant,
-    //         generatedBy: msg.sender
-    //     });
-    // }
+    function createCard(
+        address merchant,
+        string memory _cardID,
+        uint validThru,
+        bool rechargable,
+        bool transferable
+    ) public payable {
+        // create new gift card & map gift card to _cardID
+        cards[_cardID] = Card({
+            // issue date is now
+            issueDate: block.timestamp,
+            validUntil: validThru,
+            rechargable: rechargable,
+            transferable: transferable,
+            value: 0,
+            beneficiary: msg.sender,
+            merchant: merchant,
+            generatedBy: msg.sender
+        });
 
-    // function viewCard(
-    //     string memory _cardID
-    // )
-    //     public
-    //     view
-    //     returns (
-    //         address merchant,
-    //         string memory cardId,
-    //         uint value,
-    //         address generatedBy,
-    //         bool transferable,
-    //         address beneficiary
-    //     )
-    // {
-    //     // view card with ID
+        require(cards[_cardID].beneficiary == msg.sender);
+        cards[_cardID].value = msg.value;
+        balance += msg.value;
+    }
 
-    //     // get card
-    //     Card memory card = cards[_cardID];
+    function viewCard(
+        string memory _cardID
+    )
+        public
+        view
+        returns (
+            address merchant,
+            string memory cardId,
+            uint value,
+            address generatedBy,
+            bool transferable,
+            address beneficiary
+        )
+    {
+        // view card with ID
 
-    //     // card can only be viewed by it's beneficiary
-    //     require(
-    //         card.beneficiary == msg.sender,
-    //         "Cards can only be viewed by their beneficiaries"
-    //     );
+        // get card
+        Card memory card = cards[_cardID];
 
-    //     // return card
-    //     return (
-    //         card.merchant,
-    //         _cardID,
-    //         card.value,
-    //         card.generatedBy,
-    //         card.transferable,
-    //         card.beneficiary
-    //     );
-    // }
+        // card can only be viewed by it's beneficiary
+        require(
+            card.beneficiary == msg.sender,
+            "Cards can only be viewed by their beneficiaries"
+        );
+
+        // return card
+        return (
+            card.merchant,
+            _cardID,
+            card.value,
+            card.generatedBy,
+            card.transferable,
+            card.beneficiary
+        );
+    }
 
     // function confirmCreation(string memory _cardID) public payable {
     //     // confirmation to create a gift card
@@ -147,46 +151,46 @@ contract GiftCard {
     //     balance += msg.value;
     // }
 
-    // function redeemCard(
-    //     string memory _cardID,
-    //     address payable recipient,
-    //     uint256 amount
-    // ) public {
-    //     // gift card must belong to redeemin account
-    //     require(
-    //         cards[_cardID].beneficiary == msg.sender,
-    //         "address is not authorized to make transaction"
-    //     );
+    function redeemCard(
+        string memory _cardID,
+        address payable recipient,
+        uint256 amount
+    ) public {
+        // gift card must belong to redeemin account
+        require(
+            cards[_cardID].beneficiary == msg.sender,
+            "address is not authorized to make transaction"
+        );
 
-    //     // gift card must have sufficient value > amount
-    //     require(cards[_cardID].value > amount, "Insufficient amount");
+        // gift card must have sufficient value > amount
+        require(cards[_cardID].value > amount, "Insufficient amount");
 
-    //     // gift card must be for valid merchant
-    //     require(
-    //         cards[_cardID].merchant == recipient,
-    //         "Invalid merchant address"
-    //     );
+        // gift card must be for valid merchant
+        require(
+            cards[_cardID].merchant == recipient,
+            "Invalid merchant address"
+        );
 
-    //     // send funds to merchant
-    //     recipient.transfer(amount);
+        // send funds to merchant
+        recipient.transfer(amount);
 
-    //     // update gift card value
-    //     cards[_cardID].value -= amount;
+        // update gift card value
+        cards[_cardID].value -= amount;
 
-    //     // update contract balance
-    //     balance -= amount;
-    // }
+        // update contract balance
+        balance -= amount;
+    }
 
-    // function transferCard(string memory _cardID, address beneficiary) public {
-    //     // current beneficiary must belong to func caller
-    //     require(cards[_cardID].beneficiary == msg.sender);
+    function transferCard(string memory _cardID, address beneficiary) public {
+        // current beneficiary must belong to func caller
+        require(cards[_cardID].beneficiary == msg.sender);
 
-    //     // can the card be transfered to another beneficiary
-    //     require(cards[_cardID].transferable == true);
+        // can the card be transfered to another beneficiary
+        require(cards[_cardID].transferable == true);
 
-    //     // trasfer gift card to beneficiary
-    //     cards[_cardID].beneficiary = beneficiary;
-    // }
+        // trasfer gift card to beneficiary
+        cards[_cardID].beneficiary = beneficiary;
+    }
 
     // function viewCards() {}
 }

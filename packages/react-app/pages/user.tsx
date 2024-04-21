@@ -1,4 +1,4 @@
-import React, { ComponentElement } from "react";
+import React, { ComponentElement, useState } from "react";
 // import MerchantCard from "./MerchantCard";
 import { useAccount, useReadContract } from "wagmi";
 import contractAbi from "../../hardhat/artifacts/contracts/GiftCard.sol/GiftCard.json";
@@ -11,10 +11,12 @@ const UserHome = () => {
 	const account = useAccount();
 	const { data, isError, error, isLoading, isSuccess } = useReadContract({
 		abi: contractAbi.abi,
-		address: "0x635877a9eBbb5Ff16549383f01A7d49FF27C5CfD",
+		address: "0x536c3Fe8613d2648F2B3ac6c9B45Ea6C1EfB6611",
 		account: account.address,
 		functionName: "getMerchants"
 	});
+
+	let [selectedScreen, setSelectedScreen] = useState(0);
 
 
 	const render = () => {
@@ -47,7 +49,7 @@ const UserHome = () => {
 
 		for (let idx = 0; idx < list.length; idx++) {
 			let merchant: any = list[idx]
-			listItems.push(<MerchantCard name={merchant.name} minimumPrice={0.1} logo={""} />)
+			listItems.push(<MerchantCard name={merchant.name} address={merchant.merchantID} logo={""} />)
 		}
 
 		return listItems;
@@ -61,7 +63,7 @@ const UserHome = () => {
 			<div className="flex flex-col mx-auto justify-center items-center pt-8">
 				{render()}
 			</div>
-			<BottomNavBar />
+			<BottomNavBar onChange={setSelectedScreen} />
 		</div >
 	);
 }

@@ -15,7 +15,7 @@ const MerchantRegister = () => {
 		if (name != "") {
 			writeContract({
 				abi: contractABI.abi,
-				address: "0x635877a9eBbb5Ff16549383f01A7d49FF27C5CfD",
+				address: "0x536c3Fe8613d2648F2B3ac6c9B45Ea6C1EfB6611",
 				account: account.address,
 				functionName: "createMerchant",
 				args: [name]
