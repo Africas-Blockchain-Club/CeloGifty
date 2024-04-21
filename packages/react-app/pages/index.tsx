@@ -54,7 +54,7 @@ export default function Home() {
         return (<span className="loading loading-dots loading-md"></span>);
     } else if (isError) {
         console.log(error)
-        return <p className="text-red-600 font-semibold text-xl">Internal Server Error. Please try again.</p>
+        return <MetaMaskConnect />
     } else {
         return (<span className="loading loading-dots loading-md"></span>);
     }
