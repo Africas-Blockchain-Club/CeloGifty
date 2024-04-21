@@ -35,22 +35,6 @@ export default function Home() {
     }
 
 
-
-    // const renderBody = (): ReactNode => {
-
-    //     if (userData[0] == true && userData[1]) {
-    //         var connectedComponent: JSX.Element = <MerchantHome />
-
-    //     } else if (userData[0] && !userData[1]) {
-    //         var connectedComponent: JSX.Element = <UserHome />
-    //     } else {
-    //         var connectedComponent: JSX.Element = <OnBoarding />
-    //     }
-
-    //     return connectedComponent;
-    // }
-
-
     if (isSuccess) {
         const userData: Array<any> = data as Array<any>;
         console.log(userData);

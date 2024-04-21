@@ -7,7 +7,7 @@
     "license": "MIT",
     "scripts": {
         "react-app:dev": "yarn workspace @giftly/react-app dev",
-        "react-app:build": "yarn workspace @giftly/react-app build",
+        "build": "yarn workspace @giftly/react-app build",
         "react-app:start": "yarn workspace @giftly/react-app start",
         "react-app:lint": "yarn workspace @giftly/react-app lint",
         "hardhat:compile": "yarn workspace @giftly/hardhat compile"
