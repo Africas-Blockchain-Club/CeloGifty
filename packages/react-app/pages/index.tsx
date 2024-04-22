@@ -7,6 +7,7 @@ import MetaMaskConnect from "@/components/MetaMaskConnect";
 import contractABI from '../../hardhat/artifacts/contracts/GiftCard.sol/GiftCard.json';
 import UserHome from "./user";
 import MerchantHome from "./merchant";
+import Loading from "@/components/Loading";
 
 export default function Home() {
     const account = useAccount();
@@ -51,7 +52,7 @@ export default function Home() {
         );
         return <></>
     } else if (isLoading) {
-        return (<span className="loading loading-dots loading-md"></span>);
+        return (<Loading />);
     } else if (isError) {
         console.log(error)
         return <MetaMaskConnect />

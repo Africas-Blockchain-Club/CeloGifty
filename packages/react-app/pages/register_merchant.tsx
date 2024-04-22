@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useAccount, useWaitForTransactionReceipt, useWriteContract } from "wagmi";
 import contractABI from '../../hardhat/artifacts/contracts/GiftCard.sol/GiftCard.json';
 import { useRouter } from "next/router";
+import Loading from "@/components/Loading";
 
 
 const MerchantRegister = () => {
@@ -60,7 +61,7 @@ const MerchantRegister = () => {
 
 			<button onClick={registerMerchant} className={`group mt-10 flex w-full items-center justify-center rounded-lg ${error ? 'bg-red-700' : 'bg-blue-700'} py-4 text-center font-bold text-white transition ${isPending ? 'disabled' : ''} `}>
 				{isPending ?
-					<span className="loading loading-dots loading-md text-white"></span>
+					<Loading />
 					: error ?
 						'Failed' :
 						'Continue'}

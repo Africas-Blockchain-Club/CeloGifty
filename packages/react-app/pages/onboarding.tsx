@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { useAccount, useWriteContract } from "wagmi";
 import contractABI from '../../hardhat/artifacts/contracts/GiftCard.sol/GiftCard.json';
+import Loading from "@/components/Loading";
 
 const OnBoarding = () => {
 	let [selected, setSelected] = useState("merchant")
@@ -42,7 +43,7 @@ const OnBoarding = () => {
 	}
 
 	if (isPending) {
-		return (<span className="loading loading-dots loading-md text-white"></span>)
+		return (<Loading />)
 	}
 
 	return (

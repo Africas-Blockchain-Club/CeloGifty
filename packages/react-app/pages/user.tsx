@@ -7,6 +7,8 @@ import BottomNavBar from "@/components/BottomNavBar";
 import SearchBar from "@/components/SearchBar";
 import MerchantCard from "@/components/MerchantCard";
 import MyCardsTab from "@/components/MyCardsTab";
+import QRCode from "react-qr-code";
+import Loading from "@/components/Loading";
 
 const UserHome = () => {
 	const account = useAccount();
@@ -33,7 +35,16 @@ const UserHome = () => {
 			} else if (selectedScreen == 1) {
 				return <MyCardsTab />
 			} else {
-				return (<>Settings Tab</>)
+				return (
+					<div className="w-5/6 pt-24">
+						<QRCode
+							size={500}
+							style={{ height: "auto", maxWidth: "100%", width: "100%" }}
+							value={`${account.address}`}
+							viewBox={`0 0 256 256`}
+						/>
+					</div>
+				);
 			}
 			{/* {renderList()} */ }
 		} else if (isError) {
@@ -43,9 +54,7 @@ const UserHome = () => {
 			)
 		} else {
 			return (
-				<div className="items-center justify-center flex h-96">
-					<span className="loading loading-dots loading-lg text-indigo-700 "></span>
-				</div>
+				<Loading />
 			)
 		}
 	}
