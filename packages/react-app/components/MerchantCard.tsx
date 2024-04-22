@@ -1,8 +1,10 @@
 import { useRouter } from "next/router";
 import React from "react";
+import { useAccount } from "wagmi";
 
 const MerchantCard = ({ name, address, logo }: any) => {
 	const router = useRouter();
+	const account = useAccount();
 	const buy = () => {
 		console.log(address)
 		router.push({
@@ -23,7 +25,7 @@ const MerchantCard = ({ name, address, logo }: any) => {
 			<div className="card-body">
 				<h1 className="card-title text-3xl">{`${name}`}</h1>
 				<div className="card-actions justify-end">
-					<button className="btn" onClick={buy}>Buy Now</button>
+					<button className={`btn ${address == account.address ? 'disabled bg-red-500' : ''}`} onClick={(address == account.address) ? () => { } : buy}>Buy Now</button>
 				</div>
 			</div>
 		</div>

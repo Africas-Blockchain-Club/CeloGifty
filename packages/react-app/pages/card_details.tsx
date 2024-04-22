@@ -86,7 +86,7 @@ const CardDetails = () => {
 			{/* <button className="group mt-10 mx-4 flex w-11/12 items-center justify-center rounded-lg bg-blue-700 py-4 text-center font-bold text-white transition" type="submit">
 				Redeem
 			</button> */}
-			<RedeemButton redeem={redeem} />
+			<RedeemButton redeem={redeem} merchantAddress={`${query.merchantAddress}`} />
 			{/* <button className="group mt-4 mx-4 flex w-11/12 items-center justify-center rounded-lg bg-red-500 py-4 text-center font-bold text-white transition" delete={deleteCard} type="submit">
 				Delete Card
 			</button> */}

@@ -19,19 +19,19 @@ Once you have downloaded the latest version of Opera Mini Beta application, clic
 
 ## Step 3: Create an Account
 
-Create an account on the MiniPay app. Follow the on-screen instructions to set up your account.
+Create an account on the MiniPay app. Follow the on-screen instructions to set up your account. You can create an account as a merchant and as a user.
 
 ## Step 4: Explore Gift Card Options
 
-Open the MiniPay app on your phone and click on compass icon. Click on the CeloGiftCard platform. Browse through the various retailers and services to find the perfect gift card for yourself or a loved one.
+Open the MiniPay app on your phone and click on compass icon. Click on the CeloGiftCard platform. Browse through the various retailers and services to find the perfect gift card for yourself or a loved one. A merchant offers rewards card for products and services.
 
 ## Step 5: Purchase a Gift Card
 
 After selecting a gift card, proceed to purchase it using MiniPay. Follow the on-screen instructions to complete the transaction securely. Your purchased gift card will be added to your account for future redemption.
 
-## Step 6: Redeem Your Gift Card
+## Step 6: Redeem/Delete Your Gift Card
 
-To redeem your gift card, navigate to the redemption section within CeloGiftCard. Enter the gift card code provided with your purchase and follow the prompts to redeem the value of the gift card. Once redeemed, you can use the gift card at the respective retailer or service.
+To redeem your gift card, navigate to the redemption section within CeloGiftCard. Enter the gift card code provided with your purchase and follow the prompts to redeem the value of the gift card. Once redeemed, you can use the gift card at the respective retailer or service. You can delete your purchased gift card, thus your gift card's value is refunded to your mini wallet.
 
 ## Step 7: Enjoy Your Purchase
 
