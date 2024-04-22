@@ -7,7 +7,7 @@ const HomeBody = () => {
 	const account = useAccount();
 	const { data, isError, error, isLoading, isSuccess } = useReadContract({
 		abi: [contractAbi.abi[3]],
-		address: "0x9909C45eBaAb8e7CD888Ba73C4027F42512E0ed9",
+		address: "0x3c248D09928a608b002b3822F751156849ef7680",
 		account: account.address,
 		functionName: "getMerchants"
 	});

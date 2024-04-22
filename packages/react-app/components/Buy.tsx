@@ -16,7 +16,7 @@ const Buy = ({ merchantAddress }: any) => {
 		writeContract({
 			abi: contractABI.abi,
 			account: account.address,
-			address: "0x9909C45eBaAb8e7CD888Ba73C4027F42512E0ed9",
+			address: "0x3c248D09928a608b002b3822F751156849ef7680",
 			functionName: "createCard",
 			args: [merchantAddress, uuidv4(), currentDate, false, false],
 

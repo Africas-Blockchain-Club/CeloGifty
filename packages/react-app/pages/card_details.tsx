@@ -89,6 +89,7 @@ const CardDetails = () => {
 			<RedeemButton redeem={redeem} merchantAddress={`${query.merchantAddress}`} />
 			{/* <button className="group mt-4 mx-4 flex w-11/12 items-center justify-center rounded-lg bg-red-500 py-4 text-center font-bold text-white transition" delete={deleteCard} type="submit">
 				Delete Card
+			<RedeemButton redeem={redeem} merchantAddress={`${query.merchantAddress}`} />
 			</button> */}
 			<DeleteButton key={`${query.key}`} />
 		</div>
