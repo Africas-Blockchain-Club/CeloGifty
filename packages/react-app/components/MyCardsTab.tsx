@@ -54,7 +54,9 @@ const MyCardsTab = () => {
 
 			console.log(card)
 			console.log(card.cardID)
-			listItems.push(<div className="p-2 py-2"><GiftCard value={convertedUsdAmount} cardID={card.cardID} name={card.merchantName} merchantAddress={card.merchant} logo={""} /></div>)
+			if (`${card.beneficiary}` == account.address?.toString()) {
+				listItems.push(<div className="p-2 py-2"><GiftCard value={convertedUsdAmount} cardID={card.cardID} name={card.merchantName} merchantAddress={card.merchant} logo={""} /></div>)
+			}
 		}
 
 		return listItems;

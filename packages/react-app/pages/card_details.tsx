@@ -9,6 +9,7 @@ import { useAccount, useWriteContract } from "wagmi";
 import contractABI from '../../hardhat/artifacts/contracts/GiftCard.sol/GiftCard.json';
 import Loading from "@/components/Loading";
 import SuccessPayment from "@/components/SuccessPayment";
+import DeleteButton from "@/components/DeleteButton";
 
 
 const CardBalance = (props: { merchantName: string, cardBalance: string }) => {
@@ -33,6 +34,7 @@ const CardDetails = () => {
 
 	const query = router.query;
 
+	const key = query.key;
 
 	const redeem = (amount: bigint) => {
 
@@ -42,10 +44,11 @@ const CardDetails = () => {
 			address: "0x9909C45eBaAb8e7CD888Ba73C4027F42512E0ed9",
 			functionName: "redeemCard",
 			args: [query.key, query.merchantAddress, amount],
-			value: parseEther(`${amount}`)
 
 		})
 	}
+
+
 
 	const cancel = () => {
 		router.push("/")
@@ -84,9 +87,10 @@ const CardDetails = () => {
 				Redeem
 			</button> */}
 			<RedeemButton redeem={redeem} />
-			<button className="group mt-4 mx-4 flex w-11/12 items-center justify-center rounded-lg bg-red-500 py-4 text-center font-bold text-white transition" type="submit">
+			{/* <button className="group mt-4 mx-4 flex w-11/12 items-center justify-center rounded-lg bg-red-500 py-4 text-center font-bold text-white transition" delete={deleteCard} type="submit">
 				Delete Card
-			</button>
+			</button> */}
+			<DeleteButton key={`${query.key}`} />
 		</div>
 	)
 }

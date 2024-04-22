@@ -44,7 +44,7 @@ export default function Home() {
             <div className="flex flex-col justify-center items-center w-screen min-h-screen">
 
                 {isConnected ?
-                    Boolean(userData[0]).valueOf() ? (Boolean(userData[1]).valueOf() ? <MerchantHome /> : <UserHome />) : <OnBoarding />
+                    Boolean(userData[0]).valueOf() ? <UserHome /> : <OnBoarding />
                     : (
                         <MetaMaskConnect />
                     )}

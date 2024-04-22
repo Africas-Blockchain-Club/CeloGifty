@@ -62,13 +62,13 @@ const OnBoarding = () => {
 							<input className="peer hidden" type="radio" name="framework" id="merchant" value={"merchant"} onChange={setSelectedState} checked={selected == "merchant"} />
 							<label className="absolute top-0 h-full w-full cursor-pointer rounded-full border peer-checked:border-blue-700" htmlFor="merchant"> </label>
 							<div className="absolute left-4 h-5 w-5 rounded-full border-2 border-gray-300 bg-gray-200 ring-blue-700 ring-offset-2 peer-checked:border-transparent peer-checked:bg-blue-700 peer-checked:ring-2"></div>
-							<span>Merchant</span>
+							<span>Sell</span>
 						</div>
 						<div className="relative flex w-56 items-center justify-center rounded-full bg-gray-50 py-3 px-4 font-medium text-gray-700">
 							<input className="peer hidden" type="radio" name="framework" id="customer" value={"customer"} onChange={setSelectedState} checked={selected == "customer"} />
 							<label className="absolute top-0 h-full w-full cursor-pointer rounded-full border peer-checked:border-blue-700" htmlFor="customer"> </label>
 							<div className="absolute left-4 h-5 w-5 rounded-full border-2 border-gray-300 bg-gray-200 ring-blue-700 ring-offset-2 peer-checked:border-transparent peer-checked:bg-blue-700 peer-checked:ring-2"></div>
-							<span>Consumer</span>
+							<span>Purchase</span>
 						</div>
 					</div>
 
