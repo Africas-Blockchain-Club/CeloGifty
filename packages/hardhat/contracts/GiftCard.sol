@@ -12,7 +12,7 @@ contract GiftCard {
     struct Card {
         string cardID;
         // value || balance available in gift card
-        uint value;
+        uint256 value;
         // issue date of gift card [when was the card issued]
         uint256 issueDate;
         // till when is the card valid before expiration
@@ -207,5 +207,31 @@ contract GiftCard {
             }
         }
         return _allCards;
+    }
+
+    function deleteCard(string memory _cardID) public {
+        require(cards[_cardID].beneficiary == msg.sender);
+        uint256 amount = cards[_cardID].value;
+        delete cards[_cardID];
+        bool found = false;
+
+        for (uint256 idx = 0; idx < cardIDs.length; idx++) {
+            if (keccak256(bytes(cardIDs[idx])) == keccak256(bytes(_cardID))) {
+                found = true;
+
+                for (uint256 i = idx; i < cardIDs.length; i++) {
+                    cardIDs[i] = cardIDs[i + 1];
+                }
+
+                cardIDs.pop();
+                break;
+            }
+        }
+
+        require(found, "card not found");
+        address payable d = payable(msg.sender);
+
+        d.transfer(amount);
+        balance -= amount;
     }
 }

@@ -16,7 +16,7 @@ export default function Home() {
     const { address, isConnected } = useAccount();
     const { data, isError, error, isSuccess, isLoading } = useReadContract({
         abi: contractABI.abi,
-        address: "0x323D5128A3BC9Ce0472cDC750De03438d508347F",
+        address: "0x9909C45eBaAb8e7CD888Ba73C4027F42512E0ed9",
         account: account.address,
         functionName: "getUser",
     })

@@ -14,20 +14,20 @@ const MyCardsTab = () => {
 	const { data, isError, isSuccess, isLoading } = useReadContract({
 		abi: contractABI.abi,
 		account: account.address,
-		address: "0x323D5128A3BC9Ce0472cDC750De03438d508347F",
+		address: "0x9909C45eBaAb8e7CD888Ba73C4027F42512E0ed9",
 		functionName: "viewCards",
 	});
 
-	function weiToCelo(weiAmount: BigInt): string {
+	function weiToCelo(weiAmount: bigint): string {
 		// Define the conversion rate
-		const conversionRate = BigInt('1000000000000000000');
+		const conversionRate: bigint = BigInt('1000000000000000000');
 		// Perform the conversion
 		const celoAmount = (weiAmount / conversionRate).toString();
 		return celoAmount;
 	}
 
 
-	const fetchCeloPrice = (): Number => {
+	const fetchCeloPrice = (): number => {
 		return 0.8068;
 	};
 
@@ -47,7 +47,7 @@ const MyCardsTab = () => {
 		for (let idx = 0; idx < list.length; idx++) {
 			let card: any = list[idx]
 			let value = weiToCelo(card.value)
-			const celoPrice: Number = fetchCeloPrice()
+			const celoPrice: number = fetchCeloPrice()
 
 			const convertedUsdAmount = celoPrice * Number.parseInt(`${value}`);
 
