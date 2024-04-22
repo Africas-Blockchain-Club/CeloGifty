@@ -5,7 +5,7 @@ const NavBar = () => {
 		<div className="navbar bg-base-100">
 			<div className="flex-1">
 				<img width={45} src="indigo.png" />
-				<p className="font-bold text-indigo-950 pl-1">Indigo.</p>
+				<p className="font-bold text-indigo-950 pl-1">CeloGiftCard.</p>
 			</div>
 			<div className="flex-none">
 

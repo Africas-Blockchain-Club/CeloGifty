@@ -71,7 +71,7 @@ const Buy = () => {
 
 
 	return (<div className="min-h-screen w-screen">
-		<></>
+		<img src="buycard.png"></img>
 		<form className="max-w-sm mx-auto" onSubmit={buy}>
 
 			<label htmlFor="amount" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Card Value</label>
@@ -84,16 +84,19 @@ const Buy = () => {
 				<input type="text" id="amount" aria-describedby="helper-text-explanation" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Amount" onChange={onAmountChanged} required />
 			</div>
 			{/* <p id="helper-text-explanation" className="mt-2 text-sm text-gray-500 dark:text-gray-400">Please select a 5 digit number from 0 to 9.</p> */}
-			<button className="group mt-10 flex w-40 items-center justify-center rounded-lg bg-blue-700 py-2 text-center font-bold text-white transition" type="submit">
-				Continue
-				<svg xmlns="http://www.w3.org/2000/svg" className="ml-4 h-4 w-4 transition-transform group-hover:translate-x-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-					<path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-				</svg>
-			</button>
+			<div className="flex justify-center gap-x-2">
+				<button className="group mt-10 flex w-40 items-center justify-center rounded-lg bg-red-700 py-2 text-center font-bold text-white transition" onClick={cancel}>
+					Cancel
+				</button>
+				<button className="group mt-10 flex w-40 items-center justify-center rounded-lg bg-blue-700 py-2 text-center font-bold text-white transition" type="submit">
+					Continue
+					<svg xmlns="http://www.w3.org/2000/svg" className="ml-4 h-4 w-4 transition-transform group-hover:translate-x-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+					</svg>
+				</button>
 
-			<button className="group mt-10 flex w-40 items-center justify-center rounded-lg bg-red-700 py-2 text-center font-bold text-white transition" onClick={cancel}>
-				Cancel
-			</button>
+
+			</div>
 
 		</form>
 	</div>)
