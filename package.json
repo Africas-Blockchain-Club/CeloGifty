@@ -28,6 +28,7 @@
         "celo"
     ],
     "dependencies": {
+        "react-qr-code": "^2.0.12",
         "uuid": "^9.0.1"
     }
 }

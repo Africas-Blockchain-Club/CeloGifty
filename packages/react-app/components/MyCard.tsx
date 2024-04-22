@@ -14,7 +14,7 @@ const MyCard = ({ name, cardID, merchantAddress, value, logo }: any) => {
 	console.log(value)
 
 	return (
-		<div className="card w-96 bg-primary text-primary-content">
+		<div className="card w-96 bg-primary text-primary-content p-2">
 			<div className="card-body">
 				<h2 className="card-title ">{`${name}`}</h2>
 				<h2 className="card-body">{`${value}`}</h2>
