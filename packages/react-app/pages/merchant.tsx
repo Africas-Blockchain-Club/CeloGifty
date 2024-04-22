@@ -6,7 +6,7 @@ import { useAccount } from "wagmi";
 const MerchantHome = () => {
 	const account = useAccount();
 
-	return (// Can be anything instead of `maxWidth` that limits the width.
+	return (
 		<div style={{ height: "auto", margin: "0 auto", maxWidth: 64, width: "100%" }}>
 			<QRCode
 				size={500}

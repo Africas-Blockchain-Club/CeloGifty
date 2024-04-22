@@ -17,14 +17,13 @@ function RedeemButton(props: { redeem: Function }) {
 	};
 
 	function usdToCeloWei(usdAmount: number, exchangeRate: number): BigInt {
-		const weiMultiplier = 10 ** 18; // 18 decimals for Wei (use 18n for BigInt exponent)
+		const weiMultiplier = 10 ** 18;
 		const celoInWei = BigInt(Math.floor(usdAmount * exchangeRate * weiMultiplier));
 		return celoInWei;
 	}
 
 	const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
-		// console.log(usdToCeloWei(amount, 1.151))
 
 
 		props.redeem(usdToCeloWei(amount, 1.151));

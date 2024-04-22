@@ -39,9 +39,6 @@ const MerchantRegister = () => {
 		setName(event.target.value);
 	}
 
-	// if (isPending) {
-	// 	return <p>Loading...</p>
-	// }
 
 	return (
 

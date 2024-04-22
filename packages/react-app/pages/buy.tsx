@@ -18,7 +18,7 @@ const Buy = () => {
 	const buy = async (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 		let currentDate = new Date();
-		// Add a year
+
 		currentDate.setFullYear(currentDate.getFullYear() + 1);
 		writeContract({
 			abi: contractABI.abi,
