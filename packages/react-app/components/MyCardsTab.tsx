@@ -30,7 +30,7 @@ const MyCardsTab = () => {
 			let card: any = list[idx]
 			console.log(card)
 			console.log(card.cardID)
-			listItems.push(<MyCard value={card.value} cardID={card.cardID} name={card.merchantName} merchantAddress={card.merchant} logo={""} />)
+			listItems.push(<div className="p-2 py-2"><MyCard value={card.value} cardID={card.cardID} name={card.merchantName} merchantAddress={card.merchant} logo={""} /></div>)
 		}
 
 		return listItems;

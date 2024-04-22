@@ -52,7 +52,7 @@ const OnBoarding = () => {
 
 				<div className="flex flex-col items-center">
 					<p className="text-2xl pb-4 font-medium text-gray-600">Welcome to CeloGiftCard!</p>
-					<img width={150} src="ll.png" className="pb-4" />
+					<img width={150} src="ll.jpg" className="pb-4" />
 
 
 					<div className="mt-10 space-y-2">

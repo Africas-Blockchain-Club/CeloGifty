@@ -56,7 +56,7 @@ const UserHome = () => {
 
 		for (let idx = 0; idx < list.length; idx++) {
 			let merchant: any = list[idx]
-			listItems.push(<MerchantCard name={merchant.name} address={merchant.merchantID} logo={""} />)
+			listItems.push(<div className="p-2 px-2"><MerchantCard name={merchant.name} address={merchant.merchantID} logo={""} /></div>)
 		}
 
 		return listItems;
