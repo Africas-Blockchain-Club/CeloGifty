@@ -50,7 +50,7 @@ Double check if "CELO only" box is unchecked and then click on "Faucet" to fund 
 
 Click on compass icon. Click on the "Test page - Staging" platform right at the bottom of your screen.
 
-Paste the [url to our custom domain](http://celo-gift-card-react-app.vercel.app/) and click "Go"
+Paste the url to our custom domain "http://celo-gift-card-react-app.vercel.app/" and click "Go"
 
 Now you can register as a merchant by selecting "Sell" and clicking "Continue" on our home page.
 
