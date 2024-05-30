@@ -27,10 +27,6 @@ const OnBoarding = () => {
 				functionName: "createUser",
 				args: [false],
 			})
-
-
-
-
 		}
 	}
 
