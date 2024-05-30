@@ -9,6 +9,21 @@ import UserHome from "./user";
 import MerchantHome from "./merchant";
 import Loading from "@/components/Loading";
 
+
+
+
+const Landing = () => {
+    return (
+        <section className=" h-full  w-full mx-auto justify-between items-center ">
+            <img src="gift_card_landing.png" />
+            <section className=" ">
+                <MetaMaskConnect />
+            </section>
+        </section>
+    );
+}
+
+
 export default function Home() {
     const account = useAccount();
     const [userAddress, setUserAddress] = useState("");
@@ -41,23 +56,24 @@ export default function Home() {
         console.log(userData);
 
         return (
-            <div className="flex flex-col justify-center items-center w-screen min-h-screen">
+            <div className="w-full h-full">
 
                 {isConnected ?
                     Boolean(userData[0]).valueOf() ? <UserHome /> : <OnBoarding />
                     : (
-                        <MetaMaskConnect />
+                        <Landing />
                     )}
             </div>
         );
-        return <></>
     } else if (isLoading) {
         return (<Loading />);
     } else if (isError) {
         console.log(error)
-        return <MetaMaskConnect />
+        return <Landing />
     } else {
         return (<span className="loading loading-dots loading-md"></span>);
     }
 
 }
+
+
