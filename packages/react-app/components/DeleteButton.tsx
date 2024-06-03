@@ -43,7 +43,7 @@ function DeleteButton({ key }: any) {
 				onClick={toggleModal}
 				data-modal-target="authentication-modal"
 				data-modal-toggle="authentication-modal"
-				className={`group mt-10 mx-4 flex w-11/12 items-center justify-center rounded-lg ${(isError) ? "bg-red-500" : "bg-blue-700"} py-4 text-center font-bold text-white transition`}
+				className={`group text-red-500 mt-4 mx-4 flex w-11/12 items-center border-2 border-red-500  justify-center rounded-lg ${(isError) ? "bg-red-500" : ""} py-4 text-center font-bold text-white transition`}
 				type="button"
 			>
 				{(isError) ? "Failed" : "Delete Card"}

@@ -65,7 +65,7 @@ const UserHome = () => {
 
 		for (let idx = 0; idx < list.length; idx++) {
 			let merchant: any = list[idx]
-			listItems.push(<div className="p-2 px-2"><MerchantCard name={merchant.name} address={merchant.merchantID} logo={""} /></div>)
+			listItems.push(<MerchantCard name={merchant.name} address={merchant.merchantID} logo={""} />)
 		}
 
 		return listItems;
@@ -76,7 +76,7 @@ const UserHome = () => {
 		<div className="w-screen min-h-screen">
 			<NavBar />
 			<SearchBar />
-			<div className="flex flex-col mx-auto justify-center items-center pt-8">
+			<div className="flex flex-col w-full mx-auto justify-center items-center pt-4">
 				{render()}
 			</div>
 			<BottomNavBar selectedIndex={selectedScreen} onChange={setSelectedScreen} />
