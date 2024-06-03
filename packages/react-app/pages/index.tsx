@@ -56,7 +56,7 @@ export default function Home() {
         console.log(userData);
 
         return (
-            <div className="w-full h-full">
+            <div className="w-screen h-screen">
 
                 {isConnected ?
                     Boolean(userData[0]).valueOf() ? <UserHome /> : <OnBoarding />

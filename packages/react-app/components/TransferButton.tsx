@@ -2,7 +2,7 @@ import { BigNumber } from "ethers";
 import { useState } from "react";
 import { useAccount } from "wagmi";
 
-function RedeemButton(props: { redeem: Function, merchantAddress: string }) {
+function TransferButton(props: { redeem: Function, merchantAddress: string }) {
 	const account = useAccount();
 	const [showModal, setShowModal] = useState(false);
 	let [amount, setAmount] = useState(0);
@@ -37,11 +37,11 @@ function RedeemButton(props: { redeem: Function, merchantAddress: string }) {
 				onClick={toggleModal}
 				data-modal-target="authentication-modal"
 				data-modal-toggle="authentication-modal"
-				className="group mt-10 mx-4 flex w-11/12 items-center justify-center rounded-lg bg-green-600 py-4 text-center font-bold text-white transition"
+				className="group mt-4 mx-4 flex w-11/12 items-center justify-center rounded-lg border-2 border-green-600 py-4 text-center font-bold text-green-500 transition"
 				type="button"
 				disabled={account.address == props.merchantAddress}
 			>
-				Redeem
+				Transfer
 			</button>
 
 			{/* Main modal */}
@@ -125,4 +125,4 @@ function RedeemButton(props: { redeem: Function, merchantAddress: string }) {
 	);
 }
 
-export default RedeemButton;
+export default TransferButton;
