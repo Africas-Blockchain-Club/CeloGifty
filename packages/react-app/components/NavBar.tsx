@@ -2,9 +2,9 @@ import React from "react";
 
 const NavBar = () => {
 	return (
-		<div className="navbar bg-base-100">
+		<div className="navbar bg-green-800">
 			<div className="flex-1">
-				<p className="font-bold text-indigo-950 pl-1 text-xl">CeloGiftCard.</p>
+				<p className="font-bold text-white pl-1 text-xl">CeloGiftCard.</p>
 			</div>
 			<div className="flex-none">
 

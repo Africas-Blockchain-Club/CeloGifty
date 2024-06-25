@@ -11,7 +11,7 @@ const BottomNavBar = (props: { onChange: Function, selectedIndex: Number }) => {
 
 	return (
 		<div className="btm-nav">
-			<button className={`${selectedIndex == 0 ? "active text-indigo-800" : "text-indigo-400"} `} onClick={() => {
+			<button className={`${selectedIndex == 0 ? "active text-green-400" : "text-green-800"} `} onClick={() => {
 				onSelectedIndexChanged(0);
 				props.onChange(0);
 			}}>
@@ -19,7 +19,7 @@ const BottomNavBar = (props: { onChange: Function, selectedIndex: Number }) => {
 				<HomeIcon />
 				<span className="btm-nav-label">Home</span>
 			</button>
-			<button className={`${selectedIndex == 1 ? "active text-indigo-800" : "text-indigo-400"} `} onClick={() => {
+			<button className={`${selectedIndex == 1 ? "active text-green-400" : "text-green-800"} `} onClick={() => {
 				onSelectedIndexChanged(1)
 				props.onChange(1);
 			}}>
@@ -27,7 +27,7 @@ const BottomNavBar = (props: { onChange: Function, selectedIndex: Number }) => {
 				<CreditCardIcon />
 				<span className="btm-nav-label">My Cards</span>
 			</button>
-			<button className={`${selectedIndex == 2 ? "active text-indigo-800" : "text-indigo-400"} `} onClick={() => {
+			<button className={`${selectedIndex == 2 ? "active text-green-400" : "text-green-800"} `} onClick={() => {
 				onSelectedIndexChanged(2)
 				props.onChange(2);
 			}}>
