@@ -17,7 +17,8 @@ const Layout: FC<Props> = ({ children }) => {
                 {/* search bar */}
                 {/* <SearchBar /> */}
                 {/* end of search bar */}
-                <div className="py-16 max-w-7xl mx-auto space-y-8 sm:px-6 lg:px-8">
+                
+                <div className="max-w-7xl mx-auto space-y-8 sm:px-6 lg:px-8">
                     {children}
                 </div>
                 {/* <BottomNavBar /> */}

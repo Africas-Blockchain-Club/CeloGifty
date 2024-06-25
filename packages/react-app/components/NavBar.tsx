@@ -1,10 +1,22 @@
 import React from "react";
+import { useDisconnect } from 'wagmi'
+import { useRouter } from "next/router";
 
 const NavBar = () => {
+
+	const { disconnect } = useDisconnect()
+	const router = useRouter();
+
+	const handleLogout = () => {
+        disconnect(); // Disconnect the connected wallet
+        router.push("/"); // Redirect to the landing page
+    };
+
+
 	return (
-		<div className="navbar bg-base-100">
+		<div className="navbar bg-green-800">
 			<div className="flex-1">
-				<p className="font-bold text-indigo-950 pl-1 text-xl">CeloGiftCard.</p>
+				<p className="font-bold text-white pl-1 text-xl">CeloGiftCard.</p>
 			</div>
 			<div className="flex-none">
 
@@ -22,7 +34,7 @@ const NavBar = () => {
 							</a>
 						</li>
 						<li><a>Settings</a></li>
-						<li><a>Logout</a></li>
+						<li><a onClick={handleLogout}>Logout</a></li>
 					</ul>
 				</div>
 			</div>
