@@ -1,7 +1,7 @@
 import { useAccount, useReadContract } from "wagmi";
 import contractABI from '../../hardhat/artifacts/contracts/GiftCard.sol/GiftCard.json';
 import MerchantCard from "./MerchantCard";
-import MyCard from "./MyCard";
+// import MyCard from "./MyCard";
 import { useEffect, useState } from "react";
 import GiftCard from "./GiftCard";
 import Loading from "./Loading";

@@ -14,12 +14,16 @@ import Loading from "@/components/Loading";
 
 const Landing = () => {
     return (
-        <section className=" h-full  w-full mx-auto justify-between items-center ">
-            <img src="gift_card_landing.png" />
-            <section className=" ">
+        // <div className="absolute top-0 left-0 w-full h-full bg-cover bg-no-repeat" style={{ backgroundImage: 'url("/cgc_bg_img.svg")' }}>
+        <section className="flex flex-col h-screen justify-between items-center pt-2">
+            <div className="flex-grow">
+                <img src="gift_card_landing.png" alt="Gift Card Landing" className="max-w-full h-auto" />
+            </div>
+            <footer className="mt-6 mb-6">
                 <MetaMaskConnect />
-            </section>
+            </footer>
         </section>
+        
     );
 }
 

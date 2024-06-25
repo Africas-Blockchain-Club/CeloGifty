@@ -1702,13 +1702,13 @@
   resolved "https://registry.npmjs.org/@fastify/busboy/-/busboy-2.1.1.tgz"
   integrity sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==
 
-"@giftly/hardhat@file:/home/luqus/solidity/CeloGiftCard/packages/hardhat":
+"@giftly/hardhat@file:/workspaces/CeloGiftCard/packages/hardhat":
   version "1.0.0"
   resolved "file:packages/hardhat"
   dependencies:
     dotenv "^16.3.1"
 
-"@giftly/react-app@file:/home/luqus/solidity/CeloGiftCard/packages/react-app":
+"@giftly/react-app@file:/workspaces/CeloGiftCard/packages/react-app":
   version "0.1.0"
   resolved "file:packages/react-app"
   dependencies:

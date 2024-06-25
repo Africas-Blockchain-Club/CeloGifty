@@ -26,7 +26,8 @@ module.exports = {
         "sky": "#7CC0FF",
         "citrus": "#FF9A51",
         "lotus": "#FFA3EB",
-        "lavender": "#B490FF"
+        "lavender": "#B490FF",
+        "cgcgreen": "#1c5739"
       }
     },
   },
