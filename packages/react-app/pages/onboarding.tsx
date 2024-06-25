@@ -5,6 +5,7 @@ import { useAccount, useWriteContract } from "wagmi";
 import contractABI from '../../hardhat/artifacts/contracts/GiftCard.sol/GiftCard.json';
 import Loading from "@/components/Loading";
 
+
 const OnBoarding = () => {
 	let [selected, setSelected] = useState("merchant")
 	const router = useRouter()
@@ -30,6 +31,10 @@ const OnBoarding = () => {
 		}
 	}
 
+	const goHome = () => {
+        router.push("/"); // Redirect to the landing page
+    };
+
 	if (isSuccess) {
 		router.push("/");
 	}
@@ -43,15 +48,15 @@ const OnBoarding = () => {
 	}
 
 	return (
-		<div className="flex h-screen items-center justify-center">
-			<div className="relative flex w-[40rem] flex-col justify-center overflow-hidden rounded-lg bg-white/50 py-32">
+		
+		<div className="flex h-screen items-center justify-center relative">
+			{/* <div className="absolute top-0 left-0 w-full h-full bg-cover bg-no-repeat" style={{ backgroundImage: 'url("/cgc_bg_img.svg")' }}></div> */}
+			<div className="relative flex w-[22rem] flex-col justify-center overflow-hidden rounded-lg bg-white/50 py-32 px-2">
 				<span className="absolute top-0 h-1 w-1/6 bg-blue-600"></span>
 
 				<div className="flex flex-col items-center">
 					<p className="text-2xl pb-4 font-medium text-gray-600">Welcome to CeloGiftCard!</p>
-					<img width={150} src="ll.jpg" className="pb-4" />
-
-
+					<img width={150} src="cgc_mobile_money.gif" className="pb-4 pt-6" />
 					<div className="mt-10 space-y-2">
 						<h2 className="text-center text-sm uppercase text-gray-600">What are you looking to do?</h2>
 						<div className="relative flex w-56 items-center justify-center rounded-full bg-gray-50 py-3 px-4 font-medium text-gray-700">
@@ -67,15 +72,22 @@ const OnBoarding = () => {
 							<span>Purchase</span>
 						</div>
 					</div>
-
+					<div className="flex flex-box mt-auto bottom-0 ">
+					<button className="group mt-10 mr-2 flex w-40 items-center justify-center rounded-lg bg-red-700 py-2 text-center font-bold text-white transition" onClick={goHome}>
+						<svg xmlns="http://www.w3.org/2000/svg" className="ml-0 h-4 w-4 transition-transform group-hover:translate-x-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+						</svg>
+						Back </button>
 					<button className="group mt-10 flex w-40 items-center justify-center rounded-lg bg-blue-700 py-2 text-center font-bold text-white transition" onClick={continueHandler}>
 						Continue
 						<svg xmlns="http://www.w3.org/2000/svg" className="ml-4 h-4 w-4 transition-transform group-hover:translate-x-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
 							<path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
 						</svg>
 					</button>
+					</div>
 				</div>
 			</div>
+			
 		</div>
 
 	)
