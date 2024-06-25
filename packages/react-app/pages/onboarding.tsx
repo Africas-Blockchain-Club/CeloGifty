@@ -49,12 +49,12 @@ const OnBoarding = () => {
 
 	return (
 		
-		<div className="flex h-screen items-center justify-center relative">
+		<div className="flex h-screen items-center justify-between relative w-screen">
 			{/* <div className="absolute top-0 left-0 w-full h-full bg-cover bg-no-repeat" style={{ backgroundImage: 'url("/cgc_bg_img.svg")' }}></div> */}
-			<div className="relative flex w-[22rem] flex-col justify-center overflow-hidden rounded-lg bg-white/50 py-32 px-2">
+			<div className="relative flex w-[22rem] flex-col justify-center overflow-hidden rounded-lg bg-white/50 py-32 px-2 w-full items-center">
 				<span className="absolute top-0 h-1 w-1/6 bg-blue-600"></span>
 
-				<div className="flex flex-col items-center">
+				<div className="flex flex-col items-center w-full h-screen m-12 py-12 pt-32">
 					<p className="text-2xl pb-4 font-medium text-gray-600">Welcome to CeloGiftCard!</p>
 					<img width={150} src="cgc_mobile_money.gif" className="pb-4 pt-6" />
 					<div className="mt-10 space-y-2">
