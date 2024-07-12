@@ -14,7 +14,7 @@ const NavBar = () => {
 
 
 	return (
-		<div className="navbar bg-green-800">
+		<div className="navbar bg-gray-800">
 			<div className="flex-1">
 				<p className="font-bold text-white pl-1 text-xl">CeloGiftCard.</p>
 			</div>

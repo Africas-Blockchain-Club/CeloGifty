@@ -15,7 +15,7 @@ const MerchantCard = ({ name, address, logo }: any) => {
 
 	return (
 
-		<div className="w-11/12 rounded-md bg-slate-400 glass m-1">
+		<div className="w-11/12 rounded-md bg-green-300 shadow-md m-1" style={{ backgroundColor: '#B0CBA8' }}>
 			<div className="flex flex-row">
 				{/* <figure className="w-1/2 my-4">
 					<img src="https://images.ctfassets.net/wr0no19kwov9/5yVbTScDuXaZE0JL0w1kL0/f626c00085927069b473e684148c36f3/Union_1_.svg" alt="Merchant" />
@@ -25,9 +25,9 @@ const MerchantCard = ({ name, address, logo }: any) => {
 			<div className="p-4  flex w-full">
 				
 				<div className=" w-full">
-					<h1 className="flex text-xl font-semi">{`${name}`}</h1>
+					<h1 className="flex text-xl font-semi text-black">{`${name}`}</h1>
 					<div className="flex w-full items-end  justify-end">
-						<button className={`p-1 rounded-md text-white border-none text-sm ${address == account.address ? 'disabled bg-red-500' : 'bg-indigo-500'}`} onClick={(address == account.address) ? () => { } : buy}>Buy Now</button>
+						<button className={`p-1 rounded-md text-white border-none text-sm ${address == account.address ? 'disabled bg-red-500' : 'bg-green-900'}`} onClick={(address == account.address) ? () => { } : buy}>Buy Now</button>
 					</div>
 				</div>
 			</div>
