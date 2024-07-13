@@ -105,7 +105,7 @@ const CardDetails = () => {
 			<TransferButton redeem={redeem} merchantAddress={`${query.merchantAddress}`} />
 
 
-			<DeleteButton key={`${query.key}`} />
+			<DeleteButton   key={`${query.key}`} />
 		</div>
 	)
 }
