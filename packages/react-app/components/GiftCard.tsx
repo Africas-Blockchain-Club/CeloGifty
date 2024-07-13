@@ -13,7 +13,7 @@ const GiftCard = ({ name, cardID, merchantAddress, value, logo }: any) => {
 		})
 	}
 	return (
-		<div className="card w-96 bg-slate-400 glass" onClick={view}>
+		<div className="w-11/12 rounded-md bg-green-300 shadow-md m-1" style={{ backgroundColor: '#B0CBA8'}} onClick={view}>
 			<div className="flex flex-row">
 				{/* <figure className="w-1/2 my-4">
 					<img src="https://images.ctfassets.net/wr0no19kwov9/5yVbTScDuXaZE0JL0w1kL0/f626c00085927069b473e684148c36f3/Union_1_.svg" alt="Merchant" />
@@ -21,10 +21,10 @@ const GiftCard = ({ name, cardID, merchantAddress, value, logo }: any) => {
 				{/* <p className="text-bold justify-end text-white dark:text-base text-2xl mx-12 my-4">{`${value} USD`}</p> */}
 			</div>
 			<div className="card-body">
-				<h1 className="card-title text-3xl">{`${name}`}</h1>
-				<p className="font-bold justify-start text-white dark:text-base text-3xl  my-4">{`${value} USD`}</p>
+				<h1 className="card-title text-black text-3xl">{`${name}`}</h1>
+				<p className="font-bold justify-start text-black dark:text-base text-3xl  my-4">{`${value} USD`}</p>
 				<div className="card-actions justify-end">
-					<button className="btn" onClick={view}>View</button>
+					<button className="btn bg-green-900 text-white" onClick={view}>View</button>
 				</div>
 			</div>
 		</div>
