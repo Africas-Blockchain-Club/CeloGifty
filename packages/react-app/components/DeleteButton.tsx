@@ -43,7 +43,7 @@ function DeleteButton({ key }: any) {
 				onClick={toggleModal}
 				data-modal-target="authentication-modal"
 				data-modal-toggle="authentication-modal"
-				className={`group text-red-500 mt-4 mx-4 flex w-11/12 items-center border-2 border-red-500  justify-center rounded-lg ${(isError) ? "bg-red-500" : ""} py-4 text-center font-bold text-white transition`}
+				className={`group text-red-500 mt-4 mx-4 flex w-11/12 items-center border-2 border-red-500  justify-center rounded-lg ${(isError) ? "bg-red-500" : ""} py-4 text-center font-bold text-black transition`}
 				type="button"
 			>
 				{(isError) ? "Failed" : "Delete Card"}
@@ -93,7 +93,7 @@ function DeleteButton({ key }: any) {
 							<div className="p-4 md:p-5">
 								<button
 
-									className="w-full text-white bg-success  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-4 text-center mb-4  dark:bg-gree-600 "
+									className="w-full text-white bg-success  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-4 text-center mb-4  dark:bg-red-500 "
 									onClick={toggleModal}
 
 								>
@@ -101,7 +101,7 @@ function DeleteButton({ key }: any) {
 								</button>
 								<button
 
-									className="w-full text-white bg-red-500  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-4 text-center"
+									className="w-full text-white bg-green-600  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-4 text-center"
 									onClick={deleteCard}
 								>
 									Confirm
