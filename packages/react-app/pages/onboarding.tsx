@@ -49,15 +49,15 @@ const OnBoarding = () => {
 
 	return (
 		
-		<div className="flex h-screen items-center justify-between relative w-screen">
+		<div className="flex h-screen items-center justify-between relative w-full">
 			{/* <div className="absolute top-0 left-0 w-full h-full bg-cover bg-no-repeat" style={{ backgroundImage: 'url("/cgc_bg_img.svg")' }}></div> */}
-			<div className="relative flex w-[22rem] flex-col justify-center overflow-hidden rounded-lg bg-white/50 py-32 px-2 w-full items-center">
+			<div className="relative flex w-[22rem] flex-col justify-center overflow-hidden rounded-lg bg-white/50 py-2 px-2 w-full items-center">
 				<span className="absolute top-0 h-1 w-1/6 bg-blue-600"></span>
 
-				<div className="flex flex-col items-center w-full h-screen m-12 py-12 pt-32">
-					<p className="text-2xl pb-12 font-medium text-gray-600"><b>Welcome to CeloGiftCard!</b></p>
-					<img width={400} src="gift_card_landing.png" className="pb-1 pt-0" />
-					<div className="mt-2 space-y-5">
+				<div className="flex flex-col items-center w-full h-screen m-4 py-2 pt-8">
+					<p className="text-2xl pb-0 font-medium text-gray-600"><b>Welcome to CeloGiftCard!</b></p>
+					<img width={300} src="gift_card_landing.png" className="pb-0 pt-0" />
+					<div className="mt-0 space-y-2">
 						<h2 className="text-center text-sm uppercase text-gray-600">What are you looking to do?</h2>
 						<div className="relative flex w-56 items-center justify-center rounded-full bg-gray-50 py-3 px-4 font-medium text-gray-700">
 							<input className="peer hidden" type="radio" name="framework" id="merchant" value={"merchant"} onChange={setSelectedState} checked={selected == "merchant"} />
@@ -72,13 +72,13 @@ const OnBoarding = () => {
 							<span>Purchase</span>
 						</div>
 					</div>
-					<div className="flex flex-box mt-auto bottom-0 ">
+					
 					{/* <button className="group mt-10 mr-2 flex w-40 items-center justify-center rounded-lg bg-red-700 py-2 text-center font-bold text-white transition" onClick={goHome}>
 						<svg xmlns="http://www.w3.org/2000/svg" className="ml-0 h-4 w-4 transition-transform group-hover:translate-x-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
 							<path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
 						</svg>
 						Back </button> */}
-					<button className="group mt-10 flex w-40 items-center justify-center rounded-lg bg-blue-700 py-2 text-center font-bold text-white transition" onClick={continueHandler}>
+					<button className="group mt-8 flex w-40 items-center justify-center rounded-lg bg-blue-700 py-2 text-center font-bold text-white transition" onClick={continueHandler}>
 						Continue
 						<svg xmlns="http://www.w3.org/2000/svg" className="ml-4 h-4 w-4 transition-transform group-hover:translate-x-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
 							<path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -88,7 +88,6 @@ const OnBoarding = () => {
 				</div>
 			</div>
 			
-		</div>
 
 	)
 }
