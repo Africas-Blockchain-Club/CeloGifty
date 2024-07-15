@@ -33,7 +33,8 @@ Create an account on the MiniPay app. Follow the on-screen instructions to set u
 
 ## Step 4: Fund your MiniPay test net
 
-Click on [Celo Alfajores Faucet](https://faucet.celo.org/alfajores) and sign in using your Github account.
+deprecated : Click on [Celo Alfajores Faucet](https://faucet.celo.org/alfajores) and sign in using your Github account.
+The contract is currently deployed on the mainnet
 
 Uncheck the "CELO only" box so that your funds reflect on your test net.
 
@@ -54,7 +55,7 @@ Double check if "CELO only" box is unchecked and then click on "Faucet" to fund 
 
 Click on compass icon. Click on the "Test page - Staging" platform right at the bottom of your screen.
 
-Copy and paste the url to our custom domain "http://celo-gift-card-react-app.vercel.app/" and click "Go"
+Copy and paste the url to our custom domain [website link](https://celogiftly.vercel.app/) and click "Go"
 
 Now you can register as a merchant by selecting "Sell" and clicking "Continue" on our home page.
 
